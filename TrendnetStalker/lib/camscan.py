@@ -16,7 +16,7 @@ class CamScanner(object):
     def cam_available(self, url):
         try:
             resp = urlopen(url, None, 10)
-        except URLError:
+        except (URLError, timeout):
             print "Failed to contact cam: %s" % url
             return False
         else:
