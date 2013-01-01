@@ -8,4 +8,4 @@ def update_cams(api_key):
     scanner = CamScanner(api_key)
     for url, lat, lng in scanner.get_cams():
         cam = Camera.create(url=url, lat=lat, lng=lng)
-        print cam
+        print "Added new camera: %r" % url
