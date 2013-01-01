@@ -1,0 +1,46 @@
+# Python generated files
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+sdist
+build
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# IDE project files
+.idea
+
+# Project specific files
+*.zip
+*.deb
+*.csv
+*.xml
+*.log
+results_*
+*_backup
+*.png
+
+# Project unwanted files
+test.py
+*.ipynb
+*.db
