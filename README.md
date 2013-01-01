@@ -7,7 +7,6 @@ Uses the code created by [@TRENDnetExposed](https://twitter.com/TRENDnetExposed)
 
 ### Features
 
-- Auto updates cameras database every 24h (TODO)
 - Mark cameras as "dead" (TODO)
 - Tag cameras (TODO)
 - Search cameras by tag (TODO)
