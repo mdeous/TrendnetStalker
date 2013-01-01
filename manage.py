@@ -41,7 +41,6 @@ class SyncDB(Command):
 class UpdateDB(Command):
     def run(self):
         from TrendnetStalker.lib.updater import update_cams
-        print settings.SHODAN_API_KEY
         update_cams(settings.SHODAN_API_KEY)
 
 manager = Manager(app)
