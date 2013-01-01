@@ -16,10 +16,12 @@ class CamScanner(object):
         try:
             resp = urlopen(url)
         except URLError:
+            print "Failed to contact cam: %s" % url
             return False
         else:
             if resp.code == 200:
                 return True
+            print "Bad resp code: %d" % resp.code
             return False
 
     def get_cams(self):
@@ -32,11 +34,12 @@ class CamScanner(object):
                 for result in results['matches']:
                     url = "http://%s/anony/mjpg.cgi" % result['ip']
                     if self.cam_available(url):
-                        yield url
+                        yield url, result['latitude'], result['longitude']
             current_page += 1
             try:
                 results = self.api.search(self.filter, page=current_page)
             except URLError:
+                print "Failed to GET page %d" % current_page
                 skip = True
 
 
