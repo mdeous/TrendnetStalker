@@ -24,7 +24,7 @@ class SyncDB(Command):
     Create the database tables.
     """
     def run(self):
-        from TrendnetStalker import Camera, Comment, Tag, CameraTag
+        from TrendnetStalker.models import Camera, Comment, Tag, CameraTag
         Camera.create_table(fail_silently=True)
         Comment.create_table(fail_silently=True)
         Tag.create_table(fail_silently=True)

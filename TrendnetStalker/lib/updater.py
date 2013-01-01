@@ -2,7 +2,7 @@
 
 from sqlite3 import IntegrityError
 
-from TrendnetStalker import Camera
+from TrendnetStalker.models import Camera
 from TrendnetStalker.lib.camscan import CamScanner
 
 
