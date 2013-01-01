@@ -12,6 +12,7 @@ def update_cams(api_key):
         try:
             cam = Camera.create(url=url, lat=lat, lng=lng)
         except IntegrityError:
+            print "Cam already exists: %r" % url
             continue
         else:
             print "Added new camera: %r" % url
