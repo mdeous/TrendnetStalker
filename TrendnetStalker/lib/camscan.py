@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from urllib2 import urlopen, URLError
+from socket import timeout
 
 from shodan import WebAPI
 
@@ -14,7 +15,7 @@ class CamScanner(object):
 
     def cam_available(self, url):
         try:
-            resp = urlopen(url)
+            resp = urlopen(url, None, 10)
         except URLError:
             print "Failed to contact cam: %s" % url
             return False
@@ -34,7 +35,7 @@ class CamScanner(object):
                 for result in results['matches']:
                     url = "http://%s/anony/mjpg.cgi" % result['ip']
                     if self.cam_available(url):
-                        yield url, result['latitude'], result['longitude']
+                        yield url, result.get('latitude'), result.get('latitude')
             current_page += 1
             try:
                 results = self.api.search(self.filter, page=current_page)

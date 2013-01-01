@@ -18,8 +18,14 @@ class BaseModel(Model):
         database = TrendnetStalkerDB(settings.DATABASE)
 
 
-class Camera(BaseModel):
+class UnlocatedCamera(BaseModel):
     url = CharField(max_length=44, unique=True)
+
+    def __str__(self):
+        return "<UnlocatedCamera %r>" % self.url
+
+
+class Camera(UnlocatedCamera):
     lat = FloatField()
     lng = FloatField()
     is_dead = BooleanField(default=False)
