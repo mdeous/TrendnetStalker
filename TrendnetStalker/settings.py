@@ -6,6 +6,6 @@ DATABASE = 'TrendnetStalker.db'
 SHODAN_API_KEY = ''
 
 try:
-    from TrendnetStalker .prod_settings import *
+    from TrendnetStalker.prod_settings import *
 except ImportError:
     pass
